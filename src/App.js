@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactMapGL from 'react-map-gl';
 import './App.css';
+import config from './config';
 
 class App extends Component {
   render() {
@@ -9,13 +10,13 @@ class App extends Component {
         <ReactMapGL
           width={1900}
           height={1080}
-          latitude={30.275}
-          longitude={-97.741}
+          latitude={30.2598}
+          longitude={-97.724}
           zoom={13}
           onViewportChange={viewport => {
             const { width, height, latitude, longitude, zoom } = viewport;
           }}
-          mapboxApiAccessToken={'pk.eyJ1IjoiZG9udGVoaWdodG93ZXIiLCJhIjoiY2pwZjJtNmU5MDZsejNrcGFoamRpeDE3eiJ9.aXSsS9oRSZV35tevKTv3Kg'}
+          mapboxApiAccessToken={config.MAPBOX_GL_JS_KEY}
         />
       </div>
     );
