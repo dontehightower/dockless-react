@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import ReactMapGL from 'react-map-gl';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <ReactMapGL
+          width={1900}
+          height={1080}
+          latitude={30.275}
+          longitude={-97.741}
+          zoom={13}
+          onViewportChange={viewport => {
+            const { width, height, latitude, longitude, zoom } = viewport;
+          }}
+          mapboxApiAccessToken={'pk.eyJ1IjoiZG9udGVoaWdodG93ZXIiLCJhIjoiY2pwZjJtNmU5MDZsejNrcGFoamRpeDE3eiJ9.aXSsS9oRSZV35tevKTv3Kg'}
+        />
       </div>
     );
   }
