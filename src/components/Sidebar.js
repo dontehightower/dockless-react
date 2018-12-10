@@ -20,7 +20,7 @@ class Sidebar extends Component {
         <div className="topBlock">
           <h1>Dockless Data Explorer</h1>
           <div className='departmentBlock'>
-            <img src={require('../assets/coa_seal_lg.jpeg')} alt="City of Austin Logo" />
+            <img className='coa_logo' src={require('../assets/coa_seal_lg.jpeg')} alt="City of Austin Logo" />
             <h4>City of Austin Transportation Department</h4>
           </div>
           <div className='selectBlock'>
@@ -80,8 +80,7 @@ class Sidebar extends Component {
             More info
         </Button>
         </div>
-
-        <p>
+        <p className='disclaimer'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus libero nec nulla rutrum, id tempus velit elementum. Nam venenatis, nibh in pretium vulputate, dolor lacus accumsan arcu, in interdum metus eros eget felis. Proin dapibus pulvinar molestie.
         </p>
       </SidebarStyles>

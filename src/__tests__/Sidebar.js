@@ -7,10 +7,35 @@ import Sidebar from '../components/Sidebar';
 configure({ adapter: new Adapter() });
 
 describe('<Sidebar />', () => {
+  const TestSidebar = render(<Sidebar />);
 
-  it('has four items in it', () => {
-    const TestSidebar = render(<Sidebar />);
-    expect(TestSidebar.find('aside')).toBeTruthy();
+  afterAll(() => {
+    TestSidebar.detach();
+  })
+  it('is titled "Dockless Data Explorer"', () => {
+    expect(TestSidebar.find('h1').text()).toBe('Dockless Data Explorer');
+  });
+
+  it('displays the City of Austin Logo', () => {
+    expect(TestSidebar.find('.coa_logo')).toBeTruthy();
+  });
+
+  it('displays the Traansportation Department title', () => {
+    expect(TestSidebar.find('h4').text()).toEqual('City of Austin Transportation Department');
+  });
+
+  it('contains two Select menus', () => {
+    expect(TestSidebar.find('select')).toHaveLength(2);
+  });
+
+  it('has a Button', () => {
+    expect(TestSidebar.find('button')).toHaveLength(1);
+    // TODO: Maybe verify the button's text?
+    // TODO: Test that this button triggers the info modal
+  });
+
+  it('has a disclaimer at the bottom', () => {
+    expect(TestSidebar.find('.disclaimer')).toHaveLength(1);
   });
 });
 
