@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, mount, render } from 'enzyme';
+import { configure, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import Sidebar from '../components/Sidebar';
